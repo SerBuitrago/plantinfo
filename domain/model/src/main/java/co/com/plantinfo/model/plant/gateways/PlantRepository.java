@@ -10,6 +10,8 @@ public interface PlantRepository {
 
     Plant findByName(String name);
 
+    List<Plant> findAll();
+
     List<Plant> findByTypeAll(TypePlant type);
 
     Plant save(Plant plant);

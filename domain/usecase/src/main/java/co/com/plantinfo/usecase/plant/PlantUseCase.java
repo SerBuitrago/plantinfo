@@ -20,6 +20,8 @@ public class PlantUseCase{
         return plantRepositoryGateway.findByName(name);
     }
 
+    public List<Plant> findAll(){return plantRepositoryGateway.findAll();}
+
     public List<Plant> findByTypeAll(TypePlant type) {
         return plantRepositoryGateway.findByTypeAll(type);
     }
