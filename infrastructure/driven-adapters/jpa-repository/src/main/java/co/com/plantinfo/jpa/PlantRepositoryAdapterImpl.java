@@ -3,16 +3,16 @@ package co.com.plantinfo.jpa;
 import co.com.plantinfo.model.TypePlant;
 import co.com.plantinfo.model.plant.Plant;
 import co.com.plantinfo.model.plant.gateways.PlantRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PlantRepositoryAdapterImpl implements PlantRepository {
 
-    private PlantRepositoryAdapter plantRepositoryAdapter;
+    private final PlantRepositoryAdapter plantRepositoryAdapter;
 
     @Override
     public Plant findById(Long id) {
