@@ -1,4 +1,4 @@
-package co.com.plantinfo.jpa;
+package co.com.plantinfo.jpa.adapter;
 
 import co.com.plantinfo.jpa.entity.PlantEntity;
 import co.com.plantinfo.jpa.repository.PlantJPARepository;

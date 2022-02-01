@@ -1,5 +1,6 @@
-package co.com.plantinfo.jpa;
+package co.com.plantinfo.jpa.adapter.impl;
 
+import co.com.plantinfo.jpa.adapter.PlantRepositoryAdapter;
 import co.com.plantinfo.jpa.exception.PragmaException;
 import co.com.plantinfo.model.TypePlant;
 import co.com.plantinfo.model.plant.Plant;
