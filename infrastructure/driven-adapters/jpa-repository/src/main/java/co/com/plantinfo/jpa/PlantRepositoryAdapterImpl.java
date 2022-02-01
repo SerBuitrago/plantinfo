@@ -1,5 +1,6 @@
 package co.com.plantinfo.jpa;
 
+import co.com.plantinfo.jpa.exception.PragmaException;
 import co.com.plantinfo.model.TypePlant;
 import co.com.plantinfo.model.plant.Plant;
 import co.com.plantinfo.model.plant.gateways.PlantRepository;
@@ -17,12 +18,17 @@ public class PlantRepositoryAdapterImpl implements PlantRepository {
     @Override
     public Plant findById(Long id) {
         Plant plant = plantRepositoryAdapter.findById(id);
+        if(plant == null)
+            throw new PragmaException("No se ha encontrado ninguna planta con el id "+id+".");
         return plant;
     }
 
     @Override
     public Plant findByName(String name) {
-        return null;
+        Plant plant = null;
+        if(plant == null)
+            throw new PragmaException("No se ha encontrado ninguna planta con el nombre "+name+".");
+        return plant;
     }
 
     @Override
@@ -37,16 +43,21 @@ public class PlantRepositoryAdapterImpl implements PlantRepository {
 
     @Override
     public Plant save(Plant plant) {
-        return null;
+        plant = plantRepositoryAdapter.save(plant);
+        return plant;
     }
 
     @Override
     public Plant update(Plant plant) {
-        return null;
+        findById(plant.getId());
+        plant = plantRepositoryAdapter.save(plant);
+        return plant;
     }
 
     @Override
     public Plant deleteById(Long id) {
-        return null;
+        Plant plant = findById(id);
+        plantRepositoryAdapter.deleteById(id);
+        return plant;
     }
 }
