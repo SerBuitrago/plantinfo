@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/plant", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
+@CrossOrigin
 public class PlantRest {
 
     private final PlantUseCase plantUseCase;
